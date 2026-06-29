@@ -11,4 +11,4 @@ def home(request):
         "services": Service.objects.all(),
         "skills": Skill.objects.all(),
     }
-    return render(request, 'home.html', context)
+    return render(request, 'home2.html', context)
