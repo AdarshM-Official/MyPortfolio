@@ -24,7 +24,11 @@ class Project(models.Model):
 
     class Meta:
         ordering = ["display_order"]
-
+    
+    @property
+    def tech_list(self):
+        return [t.strip() for t in self.technologies.split(",")]
+    
     def __str__(self):
         return self.title
     
