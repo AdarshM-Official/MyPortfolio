@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ezkxz@5ll1f%pa_e_hh6u
 DEBUG = os.environ.get('RENDER', False) == False 
 
 
+
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
     ALLOWED_HOSTS = []
