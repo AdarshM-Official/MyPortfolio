@@ -65,6 +65,15 @@
         letter-spacing: 5px;
         margin-bottom: 15px;
       }
+      /* Hide scrollbar but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
     </style>
   </head>
 
@@ -100,44 +109,237 @@
       </div>
     </section>
    <!-- About Section -->
-<section id="about" class="py-24 bg-neutral-950 ">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- About Section -->
+    <section id="about" class="relative py-32 bg-neutral-950 overflow-hidden">
+        <!-- Abstract glowing background -->
+        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-cyan-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left: Visual/Identity -->
+                <div class="relative group perspective">
+                    <!-- Glow behind card -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-700"></div>
+                    
+                    <div class="relative bg-neutral-900/80 backdrop-blur-xl border border-neutral-800 p-10 rounded-[2rem] transform transition duration-700 group-hover:rotate-1 group-hover:scale-[1.02]">
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-8">
+                            <i class="fas fa-brain text-3xl text-cyan-400"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl font-black text-white mb-6 tracking-tight">The Developer Mindset</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-8 text-lg">
+                            Beyond just writing code, I am a problem solver at heart. My journey through MCA has equipped me with a deep understanding of complex algorithms, system architecture, and the intersection of AI with real-world applications.
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center gap-4 border-t border-neutral-800 pt-6">
+                            <span class="text-white font-semibold">Focus Areas:</span>
+                            <span class="px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-full text-sm font-medium text-cyan-300">AI Integration</span>
+                            <span class="px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-full text-sm font-medium text-cyan-300">Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Detailed Story -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-cyan-400 font-bold tracking-widest uppercase text-xs mb-6">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Who I Am
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">
+                            Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Digital Futures</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-6 text-neutral-400 text-lg leading-relaxed relative pl-6 border-l-2 border-neutral-800">
+                        <p>
+                            I'm <strong class="text-white">Adarsh M</strong>, a software developer passionate about building scalable, high-performance web applications. My approach combines clean architecture with modern design principles to create software that doesn't just work—it excels.
+                        </p>
+                        <p>
+                            With a strong foundation in <strong class="text-white">Python, Django, and React</strong>, I specialize in transforming complex requirements into intuitive digital experiences. Whether it's an AI-powered automation tool or a robust SaaS platform, I build with the future in mind.
+                        </p>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="pt-4">
+                        <a href="#contact" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-neutral-900 border border-neutral-700 rounded-full hover:bg-cyan-500 hover:border-cyan-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-neutral-900">
+                            Let's discuss your next project 
+                            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-32 bg-neutral-950 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Heading -->
+            <div class="text-center mb-24 relative">
+                <span class="text-cyan-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Portfolio</span>
+                <h2 class="text-5xl md:text-6xl font-black text-white tracking-tight">
+                    Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Projects</span>
+                </h2>
+                <div class="h-1 w-24 bg-cyan-500 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+                <p class="text-neutral-400 mt-6 text-lg max-w-2xl mx-auto">
+                    A curated selection of my finest work, showcasing innovation, scalability, and seamless user experiences.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                {% for project in projects %}
+                <div class="group relative flex flex-col justify-between bg-neutral-900/60 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-6 transition-all duration-500 shadow-lg hover:shadow-[0_20px_40px_-10px_rgba(6,182,212,0.4)] overflow-visible hover:scale-[1.05] hover:z-50 origin-center cursor-pointer h-full">
+                    
+                    <!-- Decorative background glow for card -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+
+                    <div class="relative z-10 flex-grow flex flex-col">
+                        <!-- Header with Icon & Featured Text -->
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/50 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] flex items-center justify-center group-hover:scale-110 group-hover:border-cyan-500/40 transition-all duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-cyan-400 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 3h4.5L21 9.75v10.5A1.75 1.75 0 0119.25 22H4.75A1.75 1.75 0 013 20.25V4.75A1.75 1.75 0 014.75 3h5z"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="flex items-center mt-1">
+                                <span class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/20 px-2.5 py-1 rounded-full group-hover:bg-cyan-500 group-hover:text-black transition-colors duration-300">Featured</span>
+                            </div>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                            {{ project.title }}
+                        </h3>
+
+                        <!-- Description -->
+                        <div class="relative">
+                            <p class="text-neutral-400 leading-relaxed mb-4 text-sm line-clamp-3">
+                                {{ project.description }}
+                            </p>
+                        </div>
+                        
+                        <!-- Technologies -->
+                        <div class="mb-5 mt-auto">
+                            <div class="flex flex-wrap gap-1.5">
+                                {% for tech in project.technologies.split %}
+                                <span class="px-2.5 py-1 rounded bg-neutral-800/80 text-cyan-200 text-[10px] font-medium border border-neutral-700/50 backdrop-blur-sm group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-colors whitespace-nowrap">
+                                    {{ tech }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="relative z-10 flex gap-3 mt-auto border-t border-neutral-800/50 pt-4">
+                        {% if project.live_url %}
+                        <a href="{{ project.live_url }}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-cyan-500 text-black text-sm font-bold hover:bg-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300">
+                            Demo
+                        </a>
+                        {% endif %}
+
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-neutral-800 border border-neutral-700 text-white text-sm font-semibold hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300">
+                            Code
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+<!-- Experience Section -->
+<section id="experience" class="relative py-32 bg-neutral-950 overflow-hidden">
+  <!-- Decorative Background -->
+  <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-600/10 blur-[120px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-24 relative">
+        <span class="text-cyan-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Journey</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">Experience & Education</h2>
+        <div class="h-1 w-20 bg-cyan-500 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative space-y-12 before:absolute before:top-0 before:bottom-0 before:left-5 md:before:left-1/2 before:-translate-x-1/2 before:w-1 before:bg-gradient-to-b before:from-transparent before:via-neutral-800 before:to-transparent">
       
-      <!-- Left: Visual/Identity -->
-      <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-3xl blur-2xl"></div>
-        <div class="relative bg-neutral-900 border border-neutral-800 p-8 rounded-3xl">
-          <h3 class="text-2xl font-bold text-white mb-6">The Developer Mindset</h3>
-          <p class="text-neutral-400 leading-relaxed mb-6">
-            Beyond just writing code, I am a problem solver at heart. My journey through MCA has equipped me with a deep understanding of complex algorithms, system architecture, and the intersection of AI with real-world applications.
-          </p>
-          <div class="flex items-center gap-4 text-cyan-400 font-semibold">
-            <span>Currently focused on:</span>
-            <span class="px-3 py-1 bg-cyan-500/10 rounded-full text-sm">AI Integration</span>
+      <!-- Experience Item 1 -->
+      <div class="relative flex flex-col md:flex-row items-center justify-between group">
+        <!-- Card Left (Empty) -->
+        <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+
+        <!-- Timeline dot -->
+        <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-4 border-neutral-950 bg-neutral-800 group-hover:bg-cyan-500 shadow-[0_0_0_4px_rgba(0,0,0,1)] flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+            <span class="w-3 h-3 rounded-full bg-cyan-400"></span>
+        </div>
+        
+        <!-- Card Right -->
+        <div class="w-full md:w-[calc(50%-3rem)] pl-16 md:pl-0">
+          <div class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]">
+            <div class="flex flex-col mb-4">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 font-bold text-xs tracking-wider mb-4 w-max border border-cyan-500/20">2024 - Present</span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">Freelance Software Developer</h3>
+            </div>
+            <p class="text-neutral-400 leading-relaxed">
+              Delivering custom software solutions, AI-powered applications, and scalable web platforms for diverse client requirements.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Right: Detailed Story -->
-      <div>
-        <span class="text-cyan-400 font-bold tracking-[0.2em] uppercase text-sm">Who I Am</span>
-        <h2 class="text-4xl font-bold text-white mt-3 mb-8">Architecting Digital Futures</h2>
-        
-        <div class="space-y-6 text-neutral-400 leading-relaxed">
-          <p>
-            I'm <strong>Adarsh M</strong>, a software developer passionate about building scalable, high-performance web applications. My approach combines clean architecture with modern design principles to create software that doesn't just work—it excels.
-          </p>
-          <p>
-            With a strong foundation in <strong>Python, Django, and React</strong>, I specialize in transforming complex requirements into intuitive digital experiences. Whether it's an AI-powered automation tool or a robust SaaS platform, I build with the future in mind.
-          </p>
-        </div>
+      <!-- Experience Item 2 (Reversed) -->
+      <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group">
+        <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
 
-        <!-- Social/Contact Link -->
-        <div class="mt-8">
-            <a href="#contact" class="text-white hover:text-cyan-400 font-medium transition inline-flex items-center gap-2">
-                Let's discuss your next project →
-            </a>
+        <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-4 border-neutral-950 bg-neutral-800 group-hover:bg-cyan-500 shadow-[0_0_0_4px_rgba(0,0,0,1)] flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+            <span class="w-3 h-3 rounded-full bg-neutral-600 group-hover:bg-white transition-colors"></span>
+        </div>
+        
+        <div class="w-full md:w-[calc(50%-3rem)] pl-16 md:pl-0">
+          <div class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]">
+            <div class="flex flex-col mb-4">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-neutral-800 text-neutral-300 group-hover:bg-cyan-500/10 group-hover:text-cyan-400 font-bold text-xs tracking-wider mb-4 w-max border border-neutral-700 transition-colors">2025</span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">AI & Machine Learning Intern</h3>
+              <span class="text-neutral-500 text-sm font-medium mt-1">Srishti Innovative</span>
+            </div>
+            <p class="text-neutral-400 leading-relaxed">
+              Developed high-accuracy machine learning models, including breast cancer detection systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Item 3 -->
+      <div class="relative flex flex-col md:flex-row items-center justify-between group">
+        <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+
+        <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-4 border-neutral-950 bg-neutral-800 group-hover:bg-cyan-500 shadow-[0_0_0_4px_rgba(0,0,0,1)] flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+            <span class="w-3 h-3 rounded-full bg-neutral-600 group-hover:bg-white transition-colors"></span>
+        </div>
+        
+        <div class="w-full md:w-[calc(50%-3rem)] pl-16 md:pl-0">
+          <div class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]">
+            <div class="flex flex-col mb-4">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-neutral-800 text-neutral-300 group-hover:bg-cyan-500/10 group-hover:text-cyan-400 font-bold text-xs tracking-wider mb-4 w-max border border-neutral-700 transition-colors">2024 - 2026</span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">Master of Computer Applications (MCA)</h3>
+              <span class="text-neutral-500 text-sm font-medium mt-1">CHMM College</span>
+            </div>
+            <p class="text-neutral-400 leading-relaxed">
+              Specializing in AI, RAG architectures, and Digital Forensics.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -145,281 +347,355 @@
   </div>
 </section>
 
+<!-- Tech Stack Section -->
+<section class="relative py-24 bg-neutral-950 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-black">
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-{% for project in projects %}
-
-<div
-    class="group h-[430px] rounded-2xl border border-neutral-800 bg-neutral-900
-           hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/20
-           transition-all duration-500 overflow-hidden">
-
-    <div class="h-full flex flex-col p-6">
-
-        <!-- Top -->
-        <div class="flex items-start justify-between">
-
-            <div>
-                <div
-                    class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20
-                           flex items-center justify-center mb-4">
-
-                    <!-- Project Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6 text-cyan-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.8"
-                            d="M4 7h16M4 12h16M4 17h10"/>
-                    </svg>
-
-                </div>
-
-                <h3 class="text-2xl font-bold text-white">
-                    {{ project.title }}
-                </h3>
-
-            </div>
-
-        </div>
-
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap gap-2 mt-5">
-
-            {% for tech in project.technologies.split %}
-            <span
-                class="px-3 py-1 rounded-full bg-neutral-800 border border-neutral-700
-                       text-cyan-400 text-xs">
-                {{ tech }}
-            </span>
-            {% endfor %}
-
-        </div>
-
-        <!-- Scrollable Content -->
-        <div
-            class="relative mt-5 flex-1 overflow-hidden">
-
-            <div
-                class="absolute inset-0 overflow-y-auto pr-2
-                       max-h-28 group-hover:max-h-full
-                       transition-all duration-500
-                       scrollbar-thin scrollbar-thumb-cyan-500 scrollbar-track-transparent">
-
-                <p class="text-neutral-400 leading-7 text-sm">
-                    {{ project.description }}
-                </p>
-
-                <!-- Optional Additional Details -->
-                {% if project.features %}
-                <div class="mt-5">
-                    <h4 class="text-cyan-400 text-sm font-semibold mb-2">
-                        Features
-                    </h4>
-
-                    <p class="text-neutral-500 text-sm">
-                        {{ project.features }}
-                    </p>
-                </div>
-                {% endif %}
-
-            </div>
-
-            <!-- Fade Overlay -->
-            <div
-                class="absolute bottom-0 left-0 right-0 h-10
-                       bg-gradient-to-t from-neutral-900 to-transparent
-                       group-hover:opacity-0 transition duration-300">
-            </div>
-
-        </div>
-
-        <!-- Bottom Buttons (Always Visible) -->
-        <div class="pt-5 mt-4 border-t border-neutral-800 flex gap-3">
-
-            {% if project.live_url %}
-            <a href="{{ project.live_url }}"
-               target="_blank"
-               class="flex-1 h-12 rounded-xl bg-cyan-500 hover:bg-cyan-400
-                      flex items-center justify-center transition">
-
-                <!-- External Link -->
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 text-black"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14 3h7m0 0v7m0-7L10 14M5 5v14h14"/>
-                </svg>
-
-            </a>
-            {% endif %}
-
-            {% if project.github_url %}
-            <a href="{{ project.github_url }}"
-               target="_blank"
-               class="flex-1 h-12 rounded-xl border border-neutral-700
-                      hover:border-cyan-500
-                      flex items-center justify-center transition">
-
-                <!-- GitHub -->
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24">
-
-                    <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 008.2 22.93c.58.1.79-.25.79-.56v-2.17c-3.13.68-3.79-1.34-3.79-1.34-.51-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.61 1.2 3.25.92.1-.72.39-1.2.71-1.48-2.5-.28-5.14-1.25-5.14-5.55 0-1.23.44-2.23 1.15-3.02-.11-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.6 10.6 0 015.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.22 2.68.11 2.96.72.79 1.15 1.79 1.15 3.02 0 4.31-2.65 5.26-5.16 5.54.4.34.76 1.01.76 2.04v3.02c0 .31.21.67.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
-                </svg>
-
-            </a>
-            {% endif %}
-
-        </div>
-
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-cyan-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Skills</span>
+      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">Languages & Technologies</h2>
+      <div class="h-1 w-20 bg-cyan-500 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
     </div>
 
-</div>
+    <!-- Tech Grid -->
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
 
-{% endfor %}
-
-</div>
-
-    </div>
-</section>
-    <!-- Experience Section -->
-<section id="experience" class="py-24 bg-neutral-950">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-white text-center mb-20">Experience & Education</h2>
-
-    <div class="space-y-12">
-      <!-- Experience Item 1 -->
-      <div class="relative pl-8 border-l border-neutral-800 hover:border-cyan-500 transition-colors duration-500">
-        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.6)]"></div>
-        <h3 class="text-xl font-bold text-white">Freelance Software Developer</h3>
-        <p class="text-cyan-400 font-medium mb-3">2024 - Present</p>
-        <p class="text-neutral-400 leading-relaxed">
-          Delivering custom software solutions, AI-powered applications, and scalable web platforms for diverse client requirements.
-        </p>
+      <!-- Python -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <linearGradient id="py1" x1="70.252" y1="1237.476" x2="168.591" y2="1151.089" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+            <stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/>
+          </linearGradient>
+          <linearGradient id="py2" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+            <stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFE873"/>
+          </linearGradient>
+          <path fill="url(#py1)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"/>
+          <path fill="url(#py2)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Python</span>
       </div>
 
-      <!-- Experience Item 2 -->
-      <div class="relative pl-8 border-l border-neutral-800 hover:border-cyan-500 transition-colors duration-500">
-        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-700"></div>
-        <h3 class="text-xl font-bold text-white">AI & Machine Learning Intern</h3>
-        <p class="text-cyan-400 font-medium mb-3">2025</p>
-        <p class="text-neutral-400 leading-relaxed">
-          Srishti Innovative. Developed high-accuracy machine learning models, including breast cancer detection systems.
-        </p>
+      <!-- Django -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#092E20" d="M0 0h128v128H0z"/>
+          <path fill="#44B78B" d="M59.448 0h17.759v96.672c-9.089 1.73-15.773 2.427-23.025 2.427-21.643 0-32.909-9.786-32.909-28.567 0-18.126 11.937-29.888 30.388-29.888 2.888 0 5.088.232 7.787.927V0zm0 56.017c-2.099-.693-3.833-.927-6.022-.927-8.93 0-14.083 5.556-14.083 15.267 0 9.483 4.921 14.694 13.966 14.694 1.969 0 3.592-.116 6.139-.465V56.017z"/>
+          <path fill="#44B78B" d="M86.854 41.336h17.759v59.171c0 20.56-1.504 30.444-5.898 38.91-4.144 8.117-9.663 13.325-21.02 19.028l-16.487-7.808c11.354-5.32 16.873-10.065 20.436-17.296 3.688-7.352 5.21-16.064 5.21-38.796V41.336z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Django</span>
       </div>
 
-      <!-- Education Item -->
-      <div class="relative pl-8 border-l border-neutral-800 hover:border-cyan-500 transition-colors duration-500">
-        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-700"></div>
-        <h3 class="text-xl font-bold text-white">Master of Computer Applications (MCA)</h3>
-        <p class="text-cyan-400 font-medium mb-3">2024 - 2026</p>
-        <p class="text-neutral-400 leading-relaxed">
-          Specializing in AI, RAG architectures, and Digital Forensics at CHMM College.
-        </p>
+      <!-- HTML -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/>
+          <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/>
+          <path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/>
+          <path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">HTML</span>
       </div>
+
+      <!-- CSS -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/>
+          <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354H64.001v106.49z"/>
+          <path fill="#fff" d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z"/>
+          <path fill="#EBEBEB" d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018V87.349z"/>
+          <path fill="#fff" d="M81.127 64.675l-1.666 18.522-15.426 4.164v13.433l28.354-7.858.208-2.337 2.406-26.924H81.127z"/>
+          <path fill="#EBEBEB" d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.994v13.831H45.666l-.277-3.108-.631-7.012-.33-3.711h19.573z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">CSS</span>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/>
+          <path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">JavaScript</span>
+      </div>
+
+      <!-- Node.js -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#83CD29" d="M112.771 30.334L67.shut 5.272a7.28 7.28 0 00-7.308 0l-45.273 25.062A7.28 7.28 0 0011 36.638v50.125a7.28 7.28 0 003.909 6.304L60.18 118.13a7.28 7.28 0 007.308 0l45.271-25.063a7.28 7.28 0 003.909-6.304V36.638a7.28 7.28 0 00-3.897-6.304z"/>
+          <path fill="#83CD29" d="M112.771 30.334L67.455 5.272a7.28 7.28 0 00-7.308 0L14.909 30.334A7.28 7.28 0 0011 36.638v50.125a7.28 7.28 0 003.909 6.304L60.18 118.13a7.28 7.28 0 007.308 0l45.271-25.063a7.28 7.28 0 003.909-6.304V36.638a7.28 7.28 0 00-3.897-6.304z"/>
+          <path fill="#404137" d="M64 8.524a55.476 55.476 0 100 110.952A55.476 55.476 0 0064 8.524z"/>
+          <path fill="#83CD29" d="M64 8.524v110.952A55.476 55.476 0 0064 8.524z"/>
+          <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="#83CD29" font-size="42" font-family="monospace" font-weight="bold">N</text>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Node.js</span>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.124 71.371 47.863 64 32.004 64z" fill="#38BDF8"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Tailwind</span>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#7952B3" d="M0 14.1C0 6.3 6.3 0 14.1 0h99.8c7.8 0 14.1 6.3 14.1 14.1v99.8c0 7.8-6.3 14.1-14.1 14.1H14.1C6.3 128 0 121.7 0 113.9V14.1z"/>
+          <path fill="#fff" d="M36.9 100V28.4h29.3c6.1 0 11.3.9 15.5 2.7 4.2 1.8 7.4 4.3 9.5 7.5 2.1 3.2 3.2 6.9 3.2 11.2 0 3.3-.7 6.3-2.1 8.9-1.4 2.6-3.4 4.8-6 6.5-2.6 1.7-5.6 2.8-9.1 3.3v.8c3.8.2 7.2 1.2 10.2 3.1 3 1.8 5.4 4.3 7.1 7.4 1.7 3.1 2.6 6.7 2.6 10.8 0 4.5-1.1 8.5-3.4 11.9-2.2 3.4-5.5 6.1-9.7 8-4.2 1.9-9.3 2.8-15.3 2.8H36.9V100zm17-41.8h11.4c4.5 0 7.9-.9 10.1-2.6 2.2-1.7 3.4-4.3 3.4-7.6 0-3.4-1.1-6-3.2-7.7-2.1-1.7-5.4-2.6-9.7-2.6H53.9v20.5zm0 30h12.8c4.9 0 8.6-.9 11-2.8 2.4-1.9 3.6-4.7 3.6-8.5 0-3.7-1.2-6.5-3.7-8.5-2.5-2-6.2-2.9-11.1-2.9H53.9V88.2z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Bootstrap</span>
+      </div>
+
+      <!-- Express.js -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 128 128" class="w-10 h-10">
+          <path fill="#fff" d="M126.67 98.44c-4.56 1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89 76 81.85 85.2 75.14 94.77c-2.4 3.42-4.92 4.91-9.4 3.7l26.39-36.5L67.6 29.71c4.31-.84 7.29-.41 9.93 3.45 5.83 8.52 12.26 16.63 18.67 25.21 6.45-8.55 12.8-16.67 18.8-25.11 2.41-3.42 4.84-4.arte 9.15-3.5l-9.34 12.76c-3.22 4.38-6.58 8.65-9.68 13.1-1.05 1.49-1.24 3.74-.17 5.21L126.67 98.44zM1.33 61.74c.72-3.61 1.2-7.29 2.2-10.83 6-21.43 30.6-30.34 47.5-17.06C59.5 41 64.41 52.2 64 65.23H7.63c-.89 10.49 6.04 21.6 15.94 25.14 10.69 3.86 21.11 2 30.54-5.7 1.48-1.21 3.82-1.62 5.75-2.4.78 1.99-.21 3.09-1.33 4.12-14.3 12.7-37.42 13-50.41-1.38C3.07 79.22 1.32 71.14 1.33 61.74zm9.9-1.74H54.8c-.52-12.57-9.42-21.37-20.63-21.06-12.24.33-22.22 9.43-22.94 21.06z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">Express.js</span>
+      </div>
+
+      <!-- REST API -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="#22d3ee" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">REST API</span>
+      </div>
+
+      <!-- AI -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="#22d3ee" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">AI / LLMs</span>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="group flex flex-col items-center gap-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-5 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_8px_30px_-8px_rgba(6,182,212,0.4)] transition-all duration-400 cursor-default">
+        <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="#22d3ee" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.309 48.309 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+        </svg>
+        <span class="text-neutral-400 text-xs font-semibold group-hover:text-white transition-colors">ML</span>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-24 bg-neutral-950">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-16">
-      <span class="text-cyan-400 font-bold tracking-[0.2em] uppercase text-sm">Expertise</span>
-      <h2 class="text-5xl font-bold text-white mt-2">What I Can Do</h2>
+<section id="services" class="relative py-32 bg-neutral-950 overflow-hidden">
+  <!-- Glowing Background Orbs -->
+  <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-24 relative">
+      <span class="text-cyan-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Expertise</span>
+      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">What I Can Do</h2>
+      <div class="h-1 w-20 bg-cyan-500 mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-6 h-auto md:h-[600px]">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       
-      <!-- Primary Service: Web Dev (Large Card) -->
-      <div class="md:col-span-2 md:row-span-2 bg-neutral-900 border border-neutral-800 rounded-3xl p-10 flex flex-col justify-end hover:border-cyan-500 transition-all group">
-        <div class="text-5xl mb-6">🌐</div>
-        <h3 class="text-2xl font-bold text-white mb-3">Full-Stack Web Development</h3>
-        <p class="text-neutral-400 leading-relaxed">
-          From high-performance backend architectures to responsive, pixel-perfect frontends. I build scalable applications using Django, React, and modern cloud infrastructure.
-        </p>
+      <!-- Primary Service: Web Dev (Large Card - Spans 2 cols on Desktop) -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between md:col-span-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-4xl mb-8 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            🌐
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors">Full-Stack Web Development</h3>
+          <p class="text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors max-w-2xl">
+            From high-performance backend architectures to responsive, pixel-perfect frontends. I build scalable applications using Django, React, and modern cloud infrastructure.
+          </p>
+        </div>
       </div>
 
-      <!-- Secondary Service: AI Solutions (Medium Card) -->
-      <div class="md:col-span-2 bg-neutral-900 border border-neutral-800 rounded-3xl p-10 hover:border-cyan-500 transition-all group">
-        <div class="text-4xl mb-6">🤖</div>
-        <h3 class="text-2xl font-bold text-white mb-3">AI & ML Solutions</h3>
-        <p class="text-neutral-400 leading-relaxed">
-          Implementing RAG pipelines, predictive models, and NLP tools to bring intelligent automation to your data.
-        </p>
+      <!-- College Projects -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            🎓
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">College Projects</h3>
+          <p class="text-neutral-400 leading-relaxed text-sm group-hover:text-neutral-300 transition-colors">
+            Academic research, capstone builds, and innovation challenges across AI and software engineering.
+          </p>
+        </div>
       </div>
 
-      <!-- Secondary Service: UI/UX (Small Card) -->
-      <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-10 hover:border-cyan-500 transition-all group">
-        <div class="text-4xl mb-6">🎨</div>
-        <h3 class="text-xl font-bold text-white mb-3">UI/UX Design</h3>
-        <p class="text-neutral-400 text-sm leading-relaxed">Crafting intuitive, user-centric interfaces.</p>
+      <!-- AI Solutions -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            🤖
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">AI & ML Solutions</h3>
+          <p class="text-neutral-400 leading-relaxed text-sm group-hover:text-neutral-300 transition-colors">
+            Implementing RAG pipelines, predictive models, and NLP tools to bring intelligent automation.
+          </p>
+        </div>
       </div>
 
-      <!-- Secondary Service: Forensics (Small Card) -->
-      <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-10 hover:border-cyan-500 transition-all group">
-        <div class="text-4xl mb-6">🔍</div>
-        <h3 class="text-xl font-bold text-white mb-3">Digital Forensics</h3>
-        <p class="text-neutral-400 text-sm leading-relaxed">Advanced data recovery and memory analysis.</p>
+      <!-- Video Editing -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            🎬
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Video Editing</h3>
+          <p class="text-neutral-400 leading-relaxed text-sm group-hover:text-neutral-300 transition-colors">
+            Polished visuals, dynamic storytelling, and high-retention video production.
+          </p>
+        </div>
+      </div>
+
+      <!-- Forensics -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            🔍
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Digital Forensics</h3>
+          <p class="text-neutral-400 leading-relaxed text-sm group-hover:text-neutral-300 transition-colors">
+            Advanced data recovery, memory analysis, and cyber investigation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content Writing -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            ✍️
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Content Writing</h3>
+          <p class="text-neutral-400 leading-relaxed text-sm group-hover:text-neutral-300 transition-colors">
+            Engaging narratives, SEO-driven articles, and technical documentation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photography (Spans 2 cols on Desktop) -->
+      <div class="group relative bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.4)] overflow-hidden cursor-pointer flex flex-col justify-between md:col-span-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-4xl mb-8 shadow-inner group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 group-hover:scale-110 transition-all duration-500">
+            📸
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors">Photography</h3>
+          <p class="text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors max-w-2xl">
+            Capturing moments with precision and creative vision. Specializing in stunning portraits, event coverage, and commercial product photography.
+          </p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 <!-- Contact Section -->
-<!-- Contact Section -->
-<section id="contact" class="py-32 bg-neutral-950 relative">
-  <!-- Add FontAwesome to your <head> for icons to appear: -->
-  
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
-      
-      <!-- Left: Information & Socials -->
-      <div>
-        <h2 class="text-5xl font-bold text-white mb-6">Let's start something <span class="text-cyan-400">great.</span></h2>
-        <p class="text-neutral-400 text-lg mb-12">I'm currently available for freelance projects and technical collaborations. Reach out and let’s turn your vision into reality.</p>
-        
-        <!-- Social Links -->
-        <div class="flex flex-wrap gap-4 md:gap-6">
-          <a href="https://github.com/AdarshM-Official" target="_blank" class="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-2xl text-white hover:bg-cyan-500 hover:text-black transition-all duration-300">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/adarshmofficial" target="_blank" class="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-2xl text-white hover:bg-cyan-500 hover:text-black transition-all duration-300">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://mail.google.com/adarshm.off@gmail.com" target="_blank" class="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-2xl text-white hover:bg-cyan-500 hover:text-black transition-all duration-300">
+<section id="contact" class="relative py-32 bg-neutral-950 overflow-hidden">
+  <!-- Background Glows -->
+  <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/8 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <span class="text-cyan-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Get In Touch</span>
+      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
+        Let's Build Something <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Great</span>
+      </h2>
+      <p class="text-neutral-400 text-lg max-w-xl mx-auto">I'm currently available for freelance projects and technical collaborations. Let's turn your vision into reality.</p>
+      <div class="h-1 w-20 bg-cyan-500 mx-auto mt-8 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+      <!-- Left: Info Cards + Socials -->
+      <div class="lg:col-span-2 flex flex-col gap-5">
+
+        <!-- Email Card -->
+        <a href="mailto:adarshm.off@gmail.com" class="group flex items-center gap-5 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.3)] transition-all duration-400">
+          <div class="w-14 h-14 rounded-xl bg-neutral-800 border border-neutral-700/50 flex items-center justify-center text-xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black group-hover:scale-110 transition-all duration-300 shrink-0">
             <i class="fa fa-envelope"></i>
-          </a>
-          <a href=" " target="_blank" class="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-2xl text-white hover:bg-cyan-500 hover:text-black transition-all duration-300">
-            <i class="fas fa-file-pdf"></i>
-          </a>
+          </div>
+          <div>
+            <p class="text-neutral-500 text-xs uppercase tracking-widest mb-1 font-semibold">Email</p>
+            <p class="text-white font-semibold group-hover:text-cyan-300 transition-colors">adarshm.off@gmail.com</p>
+          </div>
+        </a>
+
+        <!-- GitHub Card -->
+        <a href="https://github.com/AdarshM-Official" target="_blank" class="group flex items-center gap-5 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.3)] transition-all duration-400">
+          <div class="w-14 h-14 rounded-xl bg-neutral-800 border border-neutral-700/50 flex items-center justify-center text-xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black group-hover:scale-110 transition-all duration-300 shrink-0">
+            <i class="fab fa-github"></i>
+          </div>
+          <div>
+            <p class="text-neutral-500 text-xs uppercase tracking-widest mb-1 font-semibold">GitHub</p>
+            <p class="text-white font-semibold group-hover:text-cyan-300 transition-colors">AdarshM-Official</p>
+          </div>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a href="https://linkedin.com/in/adarshmofficial" target="_blank" class="group flex items-center gap-5 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-neutral-900/80 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.3)] transition-all duration-400">
+          <div class="w-14 h-14 rounded-xl bg-neutral-800 border border-neutral-700/50 flex items-center justify-center text-xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black group-hover:scale-110 transition-all duration-300 shrink-0">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <div>
+            <p class="text-neutral-500 text-xs uppercase tracking-widest mb-1 font-semibold">LinkedIn</p>
+            <p class="text-white font-semibold group-hover:text-cyan-300 transition-colors">adarshmofficial</p>
+          </div>
+        </a>
+
+        <!-- Availability Badge -->
+        <div class="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-5 mt-2">
+          <span class="relative flex h-3 w-3 shrink-0">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          <p class="text-emerald-400 font-semibold text-sm">Available for new projects</p>
         </div>
+
       </div>
 
-      <!-- Right: Form -->
-      <div class="bg-neutral-900/50 p-8 md:p-10 rounded-3xl border border-neutral-800 backdrop-blur-sm">
-        <form class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <input type="text" placeholder="Name" class="w-full bg-neutral-950 border border-neutral-800 p-4 rounded-xl text-white focus:border-cyan-500 outline-none transition">
-            <input type="email" placeholder="Email" class="w-full bg-neutral-950 border border-neutral-800 p-4 rounded-xl text-white focus:border-cyan-500 outline-none transition">
+      <!-- Right: Contact Form -->
+      <div class="lg:col-span-3 bg-neutral-900/40 backdrop-blur-md border border-neutral-800/80 rounded-3xl p-8 md:p-10">
+        <h3 class="text-2xl font-bold text-white mb-8">Send a Message</h3>
+        <form class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="text-neutral-400 text-sm font-medium tracking-wide">Your Name</label>
+              <input type="text" id="contact-name" placeholder="Adarsh M" class="w-full bg-neutral-950/80 border border-neutral-800 p-4 rounded-xl text-white placeholder-neutral-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/30 transition-all duration-300">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-neutral-400 text-sm font-medium tracking-wide">Email Address</label>
+              <input type="email" id="contact-email" placeholder="you@example.com" class="w-full bg-neutral-950/80 border border-neutral-800 p-4 rounded-xl text-white placeholder-neutral-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/30 transition-all duration-300">
+            </div>
           </div>
-          <textarea rows="4" placeholder="How can I help you?" class="w-full bg-neutral-950 border border-neutral-800 p-4 rounded-xl text-white focus:border-cyan-500 outline-none transition"></textarea>
-          <button class="w-full bg-cyan-500 text-black font-bold p-4 rounded-xl hover:bg-cyan-400 transition transform hover:scale-[1.02] active:scale-[0.98]">Send Message</button>
+          <div class="flex flex-col gap-2">
+            <label class="text-neutral-400 text-sm font-medium tracking-wide">Subject</label>
+            <input type="text" id="contact-subject" placeholder="Project Inquiry / Collaboration" class="w-full bg-neutral-950/80 border border-neutral-800 p-4 rounded-xl text-white placeholder-neutral-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/30 transition-all duration-300">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-neutral-400 text-sm font-medium tracking-wide">Message</label>
+            <textarea id="contact-message" rows="5" placeholder="Tell me about your project, goals, and timeline..." class="w-full bg-neutral-950/80 border border-neutral-800 p-4 rounded-xl text-white placeholder-neutral-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/30 transition-all duration-300 resize-none"></textarea>
+          </div>
+          <button id="contact-submit" type="button" class="group w-full bg-cyan-500 text-black font-bold p-4 rounded-xl hover:bg-cyan-400 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] flex items-center justify-center gap-3">
+            <span>Send Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
         </form>
       </div>
 
