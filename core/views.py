@@ -32,21 +32,21 @@ def contact(request):
                 message=form.cleaned_data["message"],
             )
 
-            send_mail(
-                subject=form.cleaned_data["subject"],
-                message=f"""
-Name: {form.cleaned_data['name']}
+#             send_mail(
+#                 subject=form.cleaned_data["subject"],
+#                 message=f"""
+# Name: {form.cleaned_data['name']}
 
-Email:
-{form.cleaned_data['email']}
+# Email:
+# {form.cleaned_data['email']}
 
-Message:
+# Message:
 
-{form.cleaned_data['message']}
-""",
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=["adarshm.off@gmail.com"],
-            )
+# {form.cleaned_data['message']}
+# """,
+#                 from_email=settings.DEFAULT_FROM_EMAIL,
+#                 recipient_list=["adarshm.off@gmail.com"],
+#             )
 
             return JsonResponse({
                 "success": True,
