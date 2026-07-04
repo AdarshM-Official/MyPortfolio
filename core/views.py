@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
-from django.core.mail import send_mail
 from .forms import ContactForm
-from django.conf import settings
 
 # Create your views here.
 def home(request):
@@ -20,7 +18,6 @@ def home(request):
 def contact(request):
 
     if request.method == "POST":
-        print('running')
         form = ContactForm(request.POST)
 
         if form.is_valid():
@@ -32,22 +29,6 @@ def contact(request):
                 message=form.cleaned_data["message"],
             )
 
-#             send_mail(
-#                 subject=form.cleaned_data["subject"],
-#                 message=f"""
-# Name: {form.cleaned_data['name']}
-
-# Email:
-# {form.cleaned_data['email']}
-
-# Message:
-
-# {form.cleaned_data['message']}
-# """,
-#                 from_email=settings.DEFAULT_FROM_EMAIL,
-#                 recipient_list=["adarshm.off@gmail.com"],
-#             )
-
             return JsonResponse({
                 "success": True,
                 "message": "Message sent successfully."
@@ -56,4 +37,3 @@ def contact(request):
     return JsonResponse({
         "success": False
     })
-
