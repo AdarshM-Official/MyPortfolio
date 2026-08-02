@@ -1,8 +1,19 @@
-#!/usr/bin/env bash
-# exit on error
-set -o errexit
-
-python3 -m venv venv
-venv/bin/pip install -r requirements.txt
-venv/bin/python manage.py collectstatic --no-input
-venv/bin/python manage.py migrate
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "myportfolio/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "myportfolio/wsgi.py"
+    }
+  ]
+}
