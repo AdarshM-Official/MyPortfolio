@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adarsh M — Full-Stack Python/Django & AI Developer</title>
+  <meta name="description" content="Portfolio of Adarsh M - Python/Django Developer focused on AI integrations, SaaS platforms, and machine learning pipelines." />
+  <meta name="author" content="Adarsh M" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Adarsh M — Python/Django & AI Developer" />
+  <meta property="og:description" content="Full-width engineering portfolio showcasing AI-integrated Django applications, multi-tenant SaaS, and diagnostic ML models." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+            cyanAccent: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            }
+          },
+          animation: {
+            'float-slow': 'float 7s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
+            'spin-slow': 'spin 18s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+              '50%': { opacity: '0.6', transform: 'scale(1.04)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    /* Edge-to-edge Tech Grid Pattern */
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    }
+    .dark .grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Ambient Gradients spanning full screen */
+    .bg-mesh-dark {
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 90% 40%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 30% 90%, rgba(99, 102, 241, 0.10) 0%, transparent 45%);
+    }
+    .bg-mesh-light {
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 90% 40%, rgba(6, 182, 212, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 30% 90%, rgba(99, 102, 241, 0.05) 0%, transparent 45%);
+    }
+
+    .glassmorphism {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    /* Gradient Typography */
+    .gradient-heading {
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 50%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dark .gradient-heading {
+      background: linear-gradient(135deg, #a5b4fc 0%, #22d3ee 50%, #e0e7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Smooth Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card Hover transitions */
+    .card-transition {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .card-transition:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Blinking Cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 2.5px;
+      height: 1.15em;
+      background-color: currentColor;
+      vertical-align: middle;
+      animation: blink 0.9s infinite;
+      margin-left: 3px;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white font-sans min-h-screen flex flex-col justify-between w-full overflow-x-hidden relative">
+
+  <!-- Full-width edge-to-edge background overlays -->
+  <div class="fixed inset-0 pointer-events-none z-0 grid-pattern"></div>
+  <div id="ambientMesh" class="fixed inset-0 pointer-events-none z-0 transition-all duration-700 bg-mesh-dark"></div>
+
+  <!-- Interactive Desktop Mouse Spotlight -->
+  <div id="cursorSpotlight" class="fixed w-[550px] h-[550px] rounded-full pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-500 blur-3xl hidden lg:block bg-gradient-to-tr from-brand-500/15 via-cyanAccent-500/10 to-transparent"></div>
+
+  <!-- ================= 100% FULL-WIDTH HEADER ================= -->
+  <header class="sticky top-0 z-50 w-full glassmorphism bg-neutral-50/85 dark:bg-neutral-950/85 border-b border-neutral-200/80 dark:border-neutral-800/80 px-4 sm:px-8 lg:px-12 transition-all">
+    <div class="w-full h-18 py-3.5 flex items-center justify-between">
+      
+      <!-- Brand & Title Left -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-cyanAccent-500 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-md">
+          <div class="w-full h-full bg-neutral-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-sm text-white tracking-wider">AM</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-neutral-900 dark:text-white tracking-tight text-base leading-tight group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">Adarsh M</span>
+          <span class="text-[11px] font-mono text-neutral-500 dark:text-neutral-400">Python/Django &bull; Applied AI</span>
+        </div>
+      </a>
+
+      <!-- Full Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-neutral-600 dark:text-neutral-400">
+        <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#certifications" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Certifications</a>
+        <a href="#education" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Education</a>
+        <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Actions Right -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Quick Resume Link -->
+        <a href="#resume" onclick="handleResumeDownload(event)" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl border border-neutral-300 dark:border-neutral-700 hover:border-brand-500 dark:hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400 transition-all shadow-sm">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Download Resume</span>
+        </a>
+
+        <!-- Dark / Light Switcher -->
+        <button id="themeToggle" type="button" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+          <i id="themeIconSun" data-lucide="sun" class="w-4 h-4 hidden"></i>
+          <i id="themeIconMoon" data-lucide="moon" class="w-4 h-4 hidden"></i>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobileMenuBtn" type="button" aria-label="Open menu" class="lg:hidden p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-neutral-200 dark:border-neutral-800 py-4 px-2 space-y-2">
+      <a href="#about" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">About</a>
+      <a href="#skills" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Skills</a>
+      <a href="#experience" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Experience</a>
+      <a href="#projects" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Projects</a>
+      <a href="#certifications" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Certifications</a>
+      <a href="#education" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Education</a>
+      <a href="#contact" class="block py-2 px-3 rounded-lg text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 mobile-link">Contact</a>
+      <a href="#resume" onclick="handleResumeDownload(event)" class="flex items-center justify-center gap-2 mt-2 py-2.5 px-3 rounded-lg text-xs font-semibold border border-neutral-300 dark:border-neutral-700 w-full">
+        <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Resume
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ================= 100% FULL-WIDTH MAIN WRAPPER ================= -->
+  <main class="relative z-10 w-full px-4 sm:px-8 lg:px-12 py-10 space-y-36">
+
+    <!-- ================= 1. HERO SECTION (FULL WIDTH SPLIT) ================= -->
+    <section id="hero" class="w-full pt-4 sm:pt-10 pb-8 reveal">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Details & Actions (Col 7) -->
+        <div class="lg:col-span-7 space-y-7 order-2 lg:order-1 text-left">
+          
+          <!-- Live Status Pill -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 shadow-sm">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span>Available for New Roles & Engineering Opportunities</span>
+          </div>
+
+          <!-- Main Title -->
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-[1.08]">
+              Adarsh M
+            </h1>
+            
+            <!-- Typewriter Dynamic Subtitle -->
+            <div class="text-xl sm:text-2xl xl:text-3xl font-bold text-neutral-700 dark:text-neutral-300 h-9 flex items-center">
+              <span id="typedRole" class="gradient-heading"></span><span class="typing-cursor"></span>
+            </div>
+
+            <!-- Location Line -->
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 flex items-center gap-2 font-mono">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-500"></i>
+              Trivandrum, Kerala, India
+            </p>
+          </div>
+
+          <!-- Concise Technical Narrative -->
+          <p class="text-neutral-600 dark:text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+            Python/Django developer focused on engineering AI-integrated full-stack web applications. Comfortable spanning relational database design, RESTful APIs, and practical AI systems (LLMs, diagnostic ML models, computer vision) to build dependable production platforms.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              <span>View Featured Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+
+            <button onclick="handleResumeDownload(event)" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 hover:border-brand-500 dark:hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5 shadow-sm">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download Resume</span>
+            </button>
+
+            <a href="#contact" class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Social & Direct Contact Badges -->
+          <div class="flex flex-wrap items-center gap-6 pt-3 text-neutral-500 dark:text-neutral-400 text-xs font-mono">
+            <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 dark:hover:text-brand-400 transition-colors flex items-center gap-2 group">
+              <i data-lucide="github" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+              <span>github.com/AdarshM-Official</span>
+            </a>
+            <a href="https://linkedin.com/in/adarshmofficial" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 dark:hover:text-brand-400 transition-colors flex items-center gap-2 group">
+              <i data-lucide="linkedin" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+              <span>linkedin.com/in/adarshmofficial</span>
+            </a>
+            <a href="mailto:adarshm.off@gmail.com" class="hover:text-brand-500 dark:hover:text-brand-400 transition-colors flex items-center gap-2 group">
+              <i data-lucide="mail" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+              <span>adarshm.off@gmail.com</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Modern Photo Card Presentation (Col 5) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+          <div class="relative w-full max-w-sm sm:max-w-md animate-float-slow">
+            
+            <!-- Ambient Dynamic Glow behind Card -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-brand-500 via-cyanAccent-500 to-brand-500 rounded-3xl blur-2xl opacity-40 dark:opacity-50 animate-pulse-soft"></div>
+            
+            <!-- Card Wrapper with Glass border -->
+            <div class="relative rounded-3xl p-3 bg-white/70 dark:bg-neutral-900/80 border border-neutral-200/90 dark:border-neutral-700/80 shadow-2xl backdrop-blur-xl group">
+              
+              <!-- Aspect Ratio Frame for Photo -->
+              <div class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-gradient-to-b from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-950 flex items-center justify-center">
+                <!-- User Profile Photo -->
+                <img 
+                  id="profilePhoto"
+                  src="assets/images/profile.jpg" 
+                  onerror="this.onerror=null; this.src='assets/images/profile-placeholder.svg';" 
+                  alt="Adarsh M - Python/Django & AI Developer" 
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <!-- Bottom Glass Information Strip -->
+                <div class="absolute bottom-4 inset-x-4 p-3 rounded-xl bg-neutral-950/85 border border-white/10 backdrop-blur-md flex items-center justify-between text-white shadow-xl">
+                  <div class="space-y-0.5">
+                    <div class="font-bold text-sm leading-none">Adarsh M</div>
+                    <div class="text-[11px] font-mono text-cyanAccent-400">Trivandrum, India</div>
+                  </div>
+                  <div class="text-right">
+                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-500/30 text-brand-300 border border-brand-400/40">MCA '26</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Micro-Badge Top Right -->
+              <div class="absolute -top-3 -right-3 px-3.5 py-1.5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl text-xs font-semibold flex items-center gap-2 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse"></span>
+                <span class="text-neutral-800 dark:text-neutral-200">Django + AI Specialist</span>
+              </div>
+
+              <!-- Floating Micro-Badge Bottom Left -->
+              <div class="absolute -bottom-3 -left-3 px-3.5 py-1.5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl text-xs font-semibold flex items-center gap-2 backdrop-blur-md">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyanAccent-500"></i>
+                <span class="text-neutral-800 dark:text-neutral-200">LLM & ML Integration</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= 2. ABOUT SECTION (FULL WIDTH) ================= -->
+    <section id="about" class="w-full space-y-8 scroll-mt-24 reveal">
+      <div class="flex items-center gap-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">01 // Profile & Overview</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Narrative (Col 7) -->
+        <div class="lg:col-span-7 space-y-5 text-left text-neutral-700 dark:text-neutral-300 text-base sm:text-lg leading-relaxed">
+          <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+            Engineering Web Systems with Applied Machine Intelligence
+          </h3>
+          <p>
+            I am a Python/Django developer with practical experience integrating AI and machine learning into full-stack web applications. Comfortable across the entire stack—from SQL database design and query optimization to RESTful APIs and responsive frontends—my project and internship experience spans multi-tenant SaaS platforms, ML-driven recommendation systems, and diagnostic models.
+          </p>
+          <p>
+            Currently completing an MCA, I am looking to bring a blend of reliable web development and applied AI to a product-focused engineering team where I can contribute to high-impact software architectures.
+          </p>
+        </div>
+
+        <!-- Right: 3 Key Capability Pillars (Col 5) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="card-transition p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Backend & Architecture</h4>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">Django MVT architecture, RESTful API design, multi-tenant databases, and SQL optimization.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-transition p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-cyanAccent-500/10 text-cyanAccent-500 flex items-center justify-center shrink-0">
+                <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Applied AI & LLMs</h4>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">Google Gemini API, LangChain pipelines, Groq integrations, OpenCV document parsing, and ML diagnostic models.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-transition p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Academics & Core CS</h4>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">Completing MCA at University of Kerala with coursework in data structures, algorithms, and web architecture.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= 3. SKILLS SECTION (FULL WIDTH 3-COL GRID) ================= -->
+    <section id="skills" class="w-full space-y-8 scroll-mt-24 reveal">
+      <div class="flex items-center gap-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">02 // Technical Skills</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+        <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+          Skills & Technical Stack
+        </h3>
+        <span class="text-xs font-mono text-neutral-500">Categorized by Domain</span>
+      </div>
+
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        
+        <!-- Category 1: Languages -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="code-2" class="w-4 h-4 text-brand-500"></i>
+            <h4>Programming Languages</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Python</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">JavaScript</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">SQL</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">HTML5</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">CSS3</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Frameworks & Tech -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="layers" class="w-4 h-4 text-brand-500"></i>
+            <h4>Frameworks & Technologies</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-bold">Django</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">RESTful APIs</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">MVT Architecture</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Machine Learning</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Emerging Tech & AI -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="cpu" class="w-4 h-4 text-cyanAccent-500"></i>
+            <h4>Emerging Tech & AI Tools</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-bold">Artificial Intelligence</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-bold">Large Language Models (LLM)</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">AI Tools</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Databases -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="database" class="w-4 h-4 text-brand-500"></i>
+            <h4>Databases & Relational Storage</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">MySQL</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">MongoDB</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">SQLite</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Oracle SQL</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">RDBMS</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Tools & Environment -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="terminal" class="w-4 h-4 text-brand-500"></i>
+            <h4>Development Tools</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Git</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">GitHub</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Visual Studio Code</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Soft Skills -->
+        <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex items-center gap-2.5 text-neutral-900 dark:text-white font-bold text-sm">
+            <i data-lucide="users" class="w-4 h-4 text-brand-500"></i>
+            <h4>Professional Competencies</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Communication</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Team Collaboration</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Problem Solving</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Adaptability</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70">Time Management</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= 4. EXPERIENCE SECTION (FULL WIDTH TIMELINE) ================= -->
+    <section id="experience" class="w-full space-y-8 scroll-mt-24 reveal">
+      <div class="flex items-center gap-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">03 // Experience</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+        Work & Internship Experience
+      </h3>
+
+      <div class="w-full space-y-6">
+        
+        <!-- Experience Card 1 -->
+        <div class="card-transition p-6 sm:p-8 rounded-3xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-4">
+            <div>
+              <h4 class="text-xl font-bold text-neutral-900 dark:text-white">
+                AI Developer Intern
+              </h4>
+              <p class="text-base font-semibold text-brand-600 dark:text-brand-400">
+                Zecser Business LLP
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">
+                May 2026 – Aug 2026
+              </span>
+            </div>
+          </div>
+
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-neutral-600 dark:text-neutral-400 pt-1 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+              <span>Assisted in developing AI-powered application features using Python, APIs, and AI/ML tools.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+              <span>Supported backend development and AI integrations with the core development team.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+              <span>Tested, debugged, and improved AI systems for reliability, resilience, and performance.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+              <span>Contributed to code reviews and sprint planning in an agile software engineering process.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience Card 2 -->
+        <div class="card-transition p-6 sm:p-8 rounded-3xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-4">
+            <div>
+              <h4 class="text-xl font-bold text-neutral-900 dark:text-white">
+                AI & Machine Learning Intern
+              </h4>
+              <p class="text-base font-semibold text-cyanAccent-600 dark:text-cyanAccent-400">
+                Srishti Innovative
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">
+                2025
+              </span>
+            </div>
+          </div>
+
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-neutral-600 dark:text-neutral-400 pt-1 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+              <span>Developed a Breast Cancer Detection diagnostic model using machine learning techniques.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+              <span>Built data preprocessing/cleaning pipelines and applied feature engineering to improve accuracy.</span>
+            </li>
+            <li class="flex items-start gap-2.5 md:col-span-2">
+              <i data-lucide="check" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+              <span>Evaluated the model with appropriate metrics and analyzed results for diagnostic performance improvement.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= 5. PROJECTS SECTION (FULL WIDTH GRID & CATEGORY FILTER) ================= -->
+    <section id="projects" class="w-full space-y-8 scroll-mt-24 reveal">
+      <div class="flex items-center gap-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">04 // Featured Projects</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+            Engineering Projects & Systems
+          </h3>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+            Production-grade web apps, multimodal clinical document intelligence, multi-tenant SaaS engines, and automated scheduling platforms.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex items-center gap-1.5 p-1 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 text-xs font-mono self-start md:self-auto backdrop-blur-sm">
+          <button onclick="filterProjects('all')" class="project-filter active px-3.5 py-1.5 rounded-lg transition-all bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm font-bold" data-filter="all">All Projects (5)</button>
+          <button onclick="filterProjects('ai')" class="project-filter px-3.5 py-1.5 rounded-lg transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white" data-filter="ai">AI / ML</button>
+          <button onclick="filterProjects('web')" class="project-filter px-3.5 py-1.5 rounded-lg transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white" data-filter="web">Full-Stack</button>
+        </div>
+      </div>
+
+      <div id="projectsGrid" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+
+        <!-- Project 1: MediReport AI -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="ai">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-semibold">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Multimodal Document AI
+                </span>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                  MediReport AI
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Autonomous Clinical Records Parser & Health Simulator</p>
+              </div>
+              <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Structured Narrative & Engineering Focus -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Transforms chaotic clinical records and scanned lab sheets into verified, structured patient intelligence without requiring manual transcription.
+            </p>
+
+            <div class="space-y-2.5 pt-1">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Intelligent Ingestion:</strong> Connects Google Gemini API & LangChain pipelines with OpenCV image processing to parse varied clinical lab reports (PDF/images) into validated JSON schemas.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Longitudinal Patient Portal:</strong> Provides an interactive timeline displaying vital trends alongside a dynamic, client-side body composition simulator built in Vanilla JS.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Automated Clinical Briefs:</strong> Generates tamper-resistant, print-ready PDF analytical reports on demand with ReportLab server-side rendering.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">Gemini API</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">LangChain</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">OpenCV</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">ReportLab</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">TailwindCSS</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
+            </div>
+            
+            <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+              <span>Inspect Source on GitHub</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: BookingCloud -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="web ai">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyanAccent-600 dark:text-cyanAccent-400 font-semibold">
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i> Multi-Tenant SaaS & Voice AI
+                </span>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                  BookingCloud
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Autonomous Subdomain Booking Architecture with LLM Concierge</p>
+              </div>
+              <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Structured Narrative & Engineering Focus -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Provides service enterprises with an instant, private subdomain-isolated scheduling portal equipped with intelligent conversational voice booking.
+            </p>
+
+            <div class="space-y-2.5 pt-1">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>Multi-Tenant Architecture:</strong> Provisions dynamic, brandable subdomains for independent vendors with strict tenant-level database isolation and customizable service rosters.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>Conversational Voice Assistant:</strong> Leverages high-speed Groq LLM inference to handle natural-language appointment queries and voice-guided scheduling.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>Business Operations Center:</strong> Empowers business owners with staff shift management, category-driven service discovery, and shareable public links.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-semibold">Groq LLM</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Voice AI</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Multi-Tenancy</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Tailwind CSS</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
+            </div>
+            
+            <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+              <span>Inspect Source on GitHub</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Multi-College Personalised Management Platform -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="web ai">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-semibold">
+                  <i data-lucide="bot" class="w-3.5 h-3.5"></i> Higher-Ed Cloud Operations
+                </span>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                  Multi-College Personalised Management
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Distributed Role Governance & Algorithmic Timetabling</p>
+              </div>
+              <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Structured Narrative & Engineering Focus -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Consolidates academic logistics across multi-institution campuses through segregated permission levels, automated scheduling solvers, and integrated support chatbots.
+            </p>
+
+            <div class="space-y-2.5 pt-1">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Role-Based Access Control:</strong> Enforces granular security boundaries for faculty, students, and campus administrators across attendance registries and academic records.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Automated Timetable Generation:</strong> Solves faculty-classroom scheduling constraints automatically to avoid timetable clashes across departments.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
+                <span><strong>Rigorous QA Verification:</strong> Documented and ran comprehensive test cases and validation suites to confirm system stability before deployment.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">AI Assistant</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Timetable Solver</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">RBAC</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Tailwind</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
+            </div>
+            
+            <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+              <span>Inspect Source on GitHub</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: LearnLoop -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="ai">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyanAccent-600 dark:text-cyanAccent-400 font-semibold">
+                  <i data-lucide="compass" class="w-3.5 h-3.5"></i> Predictive Modeling & Career AI
+                </span>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                  LearnLoop
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Machine Learning Skill-Mapping & Guidance System</p>
+              </div>
+              <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Structured Narrative & Engineering Focus -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Synthesizes student assessment inputs to map tailored professional roadmaps using an embedded machine learning classification pipeline.
+            </p>
+
+            <div class="space-y-2.5 pt-1">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>ML Recommendation Pipeline:</strong> Trains predictive algorithms on user skill profiles to match candidates with aligned industry specializations.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>Dynamic Assessment Interface:</strong> Gathers real-time responses through interactive question sequences served via internal Django REST endpoints.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <span><strong>Testing & Calibration:</strong> Maintained end-to-end integration and unit tests validating input data integrity and model output consistency.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-semibold">Machine Learning</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Internal REST APIs</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Bootstrap</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
+            </div>
+            
+            <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+              <span>Inspect Source on GitHub</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: Farmie (Spans full 2 cols on lg) -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group lg:col-span-2" data-category="web">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
+                  <i data-lucide="sprout" class="w-3.5 h-3.5"></i> Enterprise Data & Agricultural Web Service
+                </span>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                  Farmie — Farming Assistance Web Service
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Relational Agricultural Data Infrastructure & Resource Management</p>
+              </div>
+            </div>
+
+            <!-- Structured Narrative & Engineering Focus -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-4xl">
+              Engineered a unified digital advisory platform connecting regional farming communities with crop lifecycle tracking and supply metrics supported by high-concurrency database queries.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span><strong>Relational Data Architecture:</strong> Built on a normalized PostgreSQL schema ensuring ACID compliance across regional inventories, user logs, and farm reports.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span><strong>Centralized Governance Suite:</strong> Built an intuitive operational dashboard allowing staff to track grower activity, update advisory notices, and audit system records.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">PHP</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-semibold">PostgreSQL</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">JavaScript</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">HTML5</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">CSS3</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Admin Panel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= 6. CERTIFICATIONS & EDUCATION (FULL WIDTH SPLIT) ================= -->
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
+      
+      <!-- Certifications Column -->
+      <section id="certifications" class="space-y-6 scroll-mt-24 reveal">
+        <div class="flex items-center gap-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">05 // Credentials</h2>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+          Certifications
+        </h3>
+
+        <div class="space-y-4">
+          <!-- Cert 1 -->
+          <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm flex items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-brand-500"></i>
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Data Science Using Python</h4>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Infosys Springboard</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 shrink-0">2026</span>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm flex items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-cyanAccent-500"></i>
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Data Analyst Bootcamp Certificate</h4>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Udemy</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 shrink-0">2025</span>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm flex items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-emerald-500"></i>
+                <h4 class="font-bold text-neutral-900 dark:text-white text-base">Software Development in Python</h4>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">IT-ITeS Sector Skills Council NASSCOM</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 shrink-0">2024</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Column -->
+      <section id="education" class="space-y-6 scroll-mt-24 reveal">
+        <div class="flex items-center gap-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">06 // Academics</h2>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+          Education
+        </h3>
+
+        <div class="space-y-4">
+          <!-- Degree 1 -->
+          <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h4 class="text-lg font-bold text-neutral-900 dark:text-white">
+                Master of Computer Applications (MCA)
+              </h4>
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 self-start sm:self-auto">
+                2024 – 2026 (Expected)
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">University of Kerala</p>
+            <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 pt-1 leading-relaxed">
+              <span class="font-bold text-neutral-800 dark:text-neutral-200">Coursework:</span> Data Structures & Algorithms, Database Management, Web Architecture.
+            </p>
+          </div>
+
+          <!-- Degree 2 -->
+          <div class="card-transition p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h4 class="text-lg font-bold text-neutral-900 dark:text-white">
+                Bachelor of Computer Science
+              </h4>
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 self-start sm:self-auto">
+                2021 – 2024
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Kerala University</p>
+            <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 pt-1 leading-relaxed">
+              Foundations in computer science, software engineering principles, system architecture, and computational methods.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ================= 7. CONTACT SECTION (FULL WIDTH 12-COL GRID) ================= -->
+    <section id="contact" class="w-full space-y-8 scroll-mt-24 pb-8 reveal">
+      <div class="flex items-center gap-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">07 // Get In Touch</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+          Let's Discuss Opportunities & Collaborations
+        </h3>
+        <p class="text-base text-neutral-500 dark:text-neutral-400 max-w-2xl">
+          Whether you're looking for a Python/Django developer for a product role, want to consult on an AI integration, or have a project in mind, let's connect.
+        </p>
+      </div>
+
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 pt-3">
+        
+        <!-- Left: Quick Info (Col 5) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <a href="mailto:adarshm.off@gmail.com" class="card-transition flex items-start gap-4 p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm group">
+            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500 group-hover:scale-110 transition-transform">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono uppercase text-neutral-400">Email Address</div>
+              <div class="font-bold text-neutral-900 dark:text-white text-base group-hover:text-brand-500 transition-colors">
+                adarshm.off@gmail.com
+              </div>
+            </div>
+          </a>
+
+          <a href="tel:+918129265614" class="card-transition flex items-start gap-4 p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm group">
+            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500 group-hover:scale-110 transition-transform">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono uppercase text-neutral-400">Phone & WhatsApp</div>
+              <div class="font-bold text-neutral-900 dark:text-white text-base group-hover:text-brand-500 transition-colors">
+                +91 8129265614
+              </div>
+            </div>
+          </a>
+
+          <div class="card-transition flex items-start gap-4 p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-neutral-900/40 backdrop-blur-sm">
+            <div class="p-3 rounded-xl bg-cyanAccent-500/10 text-cyanAccent-500">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono uppercase text-neutral-400">Location</div>
+              <div class="font-bold text-neutral-900 dark:text-white text-base">
+                Trivandrum, Kerala, India
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Buttons -->
+          <div class="pt-2 grid grid-cols-2 gap-3">
+            <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-700 dark:text-neutral-300 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/adarshmofficial" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-700 dark:text-neutral-300 hover:text-white hover:bg-brand-600 dark:hover:bg-brand-500 transition-all shadow-sm">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Message Form (Col 7) -->
+        <div class="lg:col-span-7">
+          <form id="contactForm" onsubmit="handleContactSubmit(event)" class="card-transition p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-md space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1.5">Your Name</label>
+                <input type="text" id="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1.5">Your Email</label>
+                <input type="email" id="email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition" />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1.5">Subject</label>
+              <input type="text" id="subject" required placeholder="Software Engineering Role / Django & AI Collaboration" class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1.5">Message</label>
+              <textarea id="message" rows="4" required placeholder="Hi Adarsh, I reviewed your portfolio and would like to talk about..." class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/70 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"></textarea>
+            </div>
+
+            <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-sm font-bold bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-300 shadow-md hover:shadow-lg">
+              <i data-lucide="send" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= 100% FULL-WIDTH FOOTER ================= -->
+  <footer class="relative z-10 w-full border-t border-neutral-200/80 dark:border-neutral-800/80 py-8 px-4 sm:px-8 lg:px-12 bg-neutral-50/80 dark:bg-neutral-950/80 backdrop-blur-md text-xs text-neutral-500 dark:text-neutral-400">
+    <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <span class="font-mono font-bold text-neutral-900 dark:text-white text-sm">Adarsh M</span>
+        <span>— Python &bull; Django &bull; Applied AI</span>
+      </div>
+      <div>
+        Engineered with 100% full-width modern responsive design &bull; Ready for Render
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Toast Notification Alert -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-2xl text-sm font-semibold border border-neutral-700/50">
+      <i id="toastIcon" data-lucide="check-circle" class="w-4 h-4 text-emerald-400 dark:text-emerald-600"></i>
+      <span id="toastMessage">Success</span>
+    </div>
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Dark/Light Theme Manager
+    const html = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('themeIconSun');
+    const moonIcon = document.getElementById('themeIconMoon');
+    const ambientMesh = document.getElementById('ambientMesh');
+
+    function applyTheme(isDark) {
+      if (isDark) {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        if (ambientMesh) ambientMesh.className = 'fixed inset-0 pointer-events-none z-0 transition-all duration-700 bg-mesh-dark';
+      } else {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        if (ambientMesh) ambientMesh.className = 'fixed inset-0 pointer-events-none z-0 transition-all duration-700 bg-mesh-light';
+      }
+      lucide.createIcons();
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    const initialThemeDark = savedTheme ? savedTheme === 'dark' : true;
+    applyTheme(initialThemeDark);
+
+    themeToggleBtn.addEventListener('click', () => {
+      applyTheme(!html.classList.contains('dark'));
+    });
+
+    // Mobile Drawer Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Dynamic Typewriter Effect
+    const roles = [
+      "Python / Django Developer",
+      "Applied AI & ML Engineer",
+      "Full-Stack SaaS Architect",
+      "MCA Candidate '26"
+    ];
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typedRole = document.getElementById("typedRole");
+
+    function typeLoop() {
+      const cur = roles[roleIdx];
+      if (isDeleting) {
+        typedRole.textContent = cur.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typedRole.textContent = cur.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let speed = isDeleting ? 35 : 75;
+      if (!isDeleting && charIdx === cur.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        speed = 400;
+      }
+      setTimeout(typeLoop, speed);
+    }
+    typeLoop();
+
+    // Mouse Spotlight on Desktop
+    const cursorSpotlight = document.getElementById('cursorSpotlight');
+    window.addEventListener('mousemove', (e) => {
+      if (cursorSpotlight) {
+        cursorSpotlight.style.left = `${e.clientX}px`;
+        cursorSpotlight.style.top = `${e.clientY}px`;
+        cursorSpotlight.style.opacity = '1';
+      }
+    });
+
+    // Scroll Reveal (Intersection Observer)
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -40px 0px"
+    });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Toast feedback
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+
+    // Resume Download Handler
+    function handleResumeDownload(e) {
+      e.preventDefault();
+      showToast('Resume placeholder: drop resume.pdf into your project root to download directly.');
+      window.open('mailto:adarshm.off@gmail.com?subject=Resume%20Request%20-%20Adarsh%20M', '_blank');
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      const mailtoUrl = `mailto:adarshm.off@gmail.com?subject=${encodeURIComponent(subject + " - " + name)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
+      
+      showToast('Opening your email client...');
+      window.location.href = mailtoUrl;
+    }
+
+    // Project Filtering Logic
+    function filterProjects(type) {
+      const buttons = document.querySelectorAll('.project-filter');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === type) {
+          btn.classList.add('bg-white', 'dark:bg-neutral-800', 'text-neutral-900', 'dark:text-white', 'shadow-sm', 'font-bold');
+          btn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+        } else {
+          btn.classList.remove('bg-white', 'dark:bg-neutral-800', 'text-neutral-900', 'dark:text-white', 'shadow-sm', 'font-bold');
+          btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+        }
+      });
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (type === 'all' || cat.includes(type)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
