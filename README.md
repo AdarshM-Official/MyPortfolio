@@ -4,6 +4,15 @@ Modern, minimalist, and responsive developer portfolio website for **Adarsh M**,
 
 ---
 
+## 📄 Adding Your Resume PDF
+Place your resume PDF file here:
+```text
+assets/docs/resume.pdf
+```
+All **"Download Resume"** buttons in the header, hero section, and mobile drawer are pre-linked to directly download or view `assets/docs/resume.pdf` as `Adarsh_M_Resume.pdf`.
+
+---
+
 ## 📸 Adding Your Photo
 A photo frame with ambient animations is integrated in the Hero section:
 1. Save your photo as **`profile.jpg`** (or `.png` / `.webp`).
@@ -22,6 +31,18 @@ A photo frame with ambient animations is integrated in the Hero section:
 - **Scroll Reveal Transitions**: Smooth intersection observer animations as each section slides into view.
 - **3D Interactive Tilt Cards**: Micro-elevation and glow borders when hovering over project cards, certifications, and experience entries.
 - **Project Filter Tabs**: Seamless instant filtering between **All**, **AI / ML**, and **Full-Stack** projects.
+
+---
+
+## 📬 Contact Form Direct Email Delivery (Web3Forms)
+The contact form has been upgraded with asynchronous direct background submission:
+1. Go to [web3forms.com](https://web3forms.com/) and enter your email (`adarshm.off@gmail.com`).
+2. Copy the free access key sent to your inbox.
+3. In [`index.html`](file:///d:/Adarsh/Portfolio/Potfolio/index.html) (inside `handleContactSubmit`), replace `'YOUR_ACCESS_KEY_HERE'` with your key:
+   ```javascript
+   access_key: 'YOUR_ACCESS_KEY_HERE'
+   ```
+*If left as is, or if a user has connection issues, the form automatically falls back to opening a pre-filled email draft to `adarshm.off@gmail.com`.*
 
 ---
 
