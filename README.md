@@ -34,6 +34,17 @@ A photo frame with ambient animations is integrated in the Hero section:
 
 ---
 
+## 🛠️ Featured Engineering Projects Included
+1. **MediConnect AI** — Smart Healthcare Discovery & Emergency Coordination Platform (Python 3.12, Django 5.2, Leaflet.js, Haversine, Groq Voice AI, 5-Role RBAC, Concurrency Guards, 57+ Tests).
+2. **LegalAI** — Legal Assistant & Document Intelligence Engine (Django, ChromaDB, Sentence-Transformers `all-MiniLM-L6-v2`, Groq Cloud LLM, PyPDF, Contract Parsing).
+3. **MediReport AI** — Clinical Document Multimodal Extraction & Health Analytics (Django, Gemini API, LangChain, OpenCV, ReportLab).
+4. **BookingCloud** — Multi-Tenant SaaS Subdomain Booking Platform with Groq Voice Assistant.
+5. **Multi-College Personalised Management Platform** — Education Cloud Ops & Timetabling Solver.
+6. **LearnLoop – AI Career Compass** — Machine Learning Career Path Recommendation System ([Live Demo](https://learnloop-1ywm.onrender.com/) | [GitHub](https://github.com/Nekha024/LearnLoop)).
+7. **Farmie** — Agricultural Assistance Web Service (PostgreSQL, PHP, Admin Panel).
+
+---
+
 ## 📬 Contact Form Direct Email Delivery (Web3Forms)
 The contact form has been upgraded with asynchronous direct background submission:
 1. Go to [web3forms.com](https://web3forms.com/) and enter your email (`adarshm.off@gmail.com`).

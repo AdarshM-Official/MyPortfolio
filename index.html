@@ -475,7 +475,11 @@
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-bold">Artificial Intelligence</span>
             <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-bold">Large Language Models (LLM)</span>
-            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">AI Tools</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-bold">RAG Architecture</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">ChromaDB</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Sentence-Transformers</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Groq API</span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/70 dark:border-neutral-700/70 font-semibold">Web Speech API</span>
           </div>
         </div>
 
@@ -615,298 +619,550 @@
     </section>
 
 
-    <!-- ================= 5. PROJECTS SECTION (FULL WIDTH GRID & CATEGORY FILTER) ================= -->
-    <section id="projects" class="w-full space-y-8 scroll-mt-24 reveal">
-      <div class="flex items-center gap-3">
-        <h2 class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold">04 // Featured Projects</h2>
-        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
-      </div>
-
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
-            Engineering Projects & Systems
-          </h3>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Freelance commercial client systems, applied AI integrations, SaaS booking architectures, and academic engineering projects.
-          </p>
+        <!-- ================= 5. PROJECTS SECTION (PREMIUM ENGINEERING SHOWCASE) ================= -->
+    <section id="projects" class="w-full space-y-10 scroll-mt-24 reveal">
+      
+      <!-- Section Header with Meta Stats -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+            04 // FEATURED ARCHITECTURES & CLIENT WORK
+          </span>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
         </div>
 
-        <!-- Filter Buttons with Freelance Filter -->
-        <div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 text-xs font-mono self-start md:self-auto backdrop-blur-sm">
-          <button onclick="filterProjects('all')" class="project-filter active px-3 py-1.5 rounded-lg transition-all bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm font-bold" data-filter="all">All (5)</button>
-          <button onclick="filterProjects('freelance')" class="project-filter px-3 py-1.5 rounded-lg transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white" data-filter="freelance">Freelance & Client</button>
-          <button onclick="filterProjects('ai')" class="project-filter px-3 py-1.5 rounded-lg transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white" data-filter="ai">AI / ML</button>
-          <button onclick="filterProjects('web')" class="project-filter px-3 py-1.5 rounded-lg transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white" data-filter="web">Full-Stack</button>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="space-y-2">
+            <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+              Engineered Systems & Products
+            </h3>
+            <p class="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
+              Production systems spanning emergency dispatchers, legal RAG search, multimodal document extraction, and multi-tenant SaaS platforms built with Python, Django, and applied AI.
+            </p>
+          </div>
+
+          <!-- Modern Segmented Pill Filters -->
+          <div class="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-neutral-100/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-sm self-start lg:self-auto">
+            <button onclick="filterProjects('all')" class="project-filter active px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all bg-white dark:bg-neutral-800 text-neutral-950 dark:text-white shadow-sm" data-filter="all">All (7)</button>
+            <button onclick="filterProjects('ai')" class="project-filter px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white" data-filter="ai">AI & RAG</button>
+            <button onclick="filterProjects('healthcare')" class="project-filter px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white" data-filter="healthcare">Healthcare AI</button>
+            <button onclick="filterProjects('freelance')" class="project-filter px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white" data-filter="freelance">Freelance SaaS</button>
+            <button onclick="filterProjects('web')" class="project-filter px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white" data-filter="web">Full-Stack</button>
+          </div>
         </div>
       </div>
 
-      <div id="projectsGrid" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+      <!-- Projects Grid Layout -->
+      <div id="projectsGrid" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 pt-2">
 
-        <!-- Project 1: MediReport AI -->
-        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="ai web">
-          <div class="space-y-5">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-semibold">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Multimodal Document AI
+        <!-- ================= CARD 1: MediConnect AI (Hero Flagship - 2 Cols on lg) ================= -->
+        <div class="project-card card-transition lg:col-span-2 relative rounded-3xl p-8 sm:p-10 border border-neutral-200/90 dark:border-neutral-800/90 bg-gradient-to-br from-white via-white/90 to-rose-50/30 dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-rose-950/20 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:border-rose-500/50 transition-all duration-300 group overflow-hidden" data-category="healthcare ai web freelance">
+          
+          <div class="absolute -right-20 -top-20 w-80 h-80 bg-rose-500/10 dark:bg-rose-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-rose-500/20 transition-all duration-500"></div>
+
+          <div class="relative z-10 flex flex-col justify-between h-full space-y-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/70 dark:border-neutral-800/70 pb-6">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-mono text-xs font-bold text-rose-600 dark:text-rose-400">#01 // EMERGENCY DISPATCH & VOICE AI</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span> Flagship Architecture
                   </span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700">AI Product</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+                    5-Role Ecosystem
+                  </span>
+                </div>
+                <h4 class="text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                  MediConnect AI
+                </h4>
+                <p class="text-sm font-medium text-neutral-500 dark:text-neutral-400 font-mono">
+                  Smart Healthcare Discovery, Emergency Coordination & AI Voice Assistant
+                </p>
+              </div>
+
+              <!-- Top Prominent Action Bar -->
+              <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+                <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-bold text-neutral-900 dark:text-white hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <div class="lg:col-span-5 space-y-4 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                <p>
+                  A location-aware healthcare discovery, emergency triage, and AI voice assistance platform connecting five interconnected stakeholders in real time.
+                </p>
+                <div class="p-4 rounded-2xl bg-neutral-100/70 dark:bg-neutral-800/50 border border-neutral-200/60 dark:border-neutral-700/60 space-y-2">
+                  <div class="text-xs font-mono font-bold text-neutral-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-rose-500"></i> Reliability Metrics
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400">
+                    Optimistic locking & atomic transactions prevent race conditions during ambulance reservations. Validated by <strong>57+ unit and concurrency tests</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                
+                <div class="p-3.5 rounded-2xl bg-white/80 dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-bold text-neutral-900 dark:text-white">
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-rose-500"></i>
+                    <span>5 Distinct Portals</span>
+                  </div>
+                  <p class="text-[12px] text-neutral-500 dark:text-neutral-400 leading-normal">
+                    Custom RBAC for Patients, Hospital fleet managers, Doctor slots, Live pharmacy inventory & Diagnostic labs.
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-white/80 dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-bold text-neutral-900 dark:text-white">
+                    <i data-lucide="siren" class="w-3.5 h-3.5 text-rose-500"></i>
+                    <span>Emergency Dispatch</span>
+                  </div>
+                  <p class="text-[12px] text-neutral-500 dark:text-neutral-400 leading-normal">
+                    Idempotent triage workflow, live GPS tracking, 10s resilient visibility-aware polling, and zero double-booking locks.
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-white/80 dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-bold text-neutral-900 dark:text-white">
+                    <i data-lucide="mic" class="w-3.5 h-3.5 text-rose-500"></i>
+                    <span>Conversational Voice AI</span>
+                  </div>
+                  <p class="text-[12px] text-neutral-500 dark:text-neutral-400 leading-normal">
+                    High-speed Groq LLM inference paired with Web Speech API for voice triage and non-diagnostic first-aid safety guardrails.
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-white/80 dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-bold text-neutral-900 dark:text-white">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-500"></i>
+                    <span>Geospatial Discovery</span>
+                  </div>
+                  <p class="text-[12px] text-neutral-500 dark:text-neutral-400 leading-normal">
+                    Leaflet map engine filtering by Haversine radial distance, 24/7 emergency readiness, and 30-min inventory freshness.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Prominent Bottom Action Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-5 border-t border-neutral-200/70 dark:border-neutral-800/70">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Python 3.12</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Django 5.2</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-lg bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">Groq API</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-lg bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">Web Speech API</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Leaflet.js</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Haversine</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Multi-Role RBAC</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">Atomic Locks</span>
+                <span class="px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200">57+ Tests</span>
+              </div>
+
+              <div class="flex items-center gap-3 shrink-0">
+                <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-mono font-bold bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md hover:-translate-y-0.5">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>Inspect Code & Tests</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= CARD 2: LegalAI ================= -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-sm hover:border-amber-500/70 dark:hover:border-amber-500/70 group" data-category="ai web freelance">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">#02 // RAG & CONTRACT INTELLIGENCE</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">Vector Search</span>
+                </div>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                  LegalAI
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Legal Assistant & Document Intelligence Engine</p>
+              </div>
+
+              <!-- Prominent Action Button -->
+              <div class="flex items-center gap-2 shrink-0">
+                <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-bold text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Legal intelligence engine navigating the Indian legal code (IPC, new criminal enactments BNS/BNSS/BSA, and case law precedents) through vector embeddings and contract parsing.
+            </p>
+
+            <div class="space-y-2.5">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span><strong>Semantic RAG Pipeline:</strong> ChromaDB vector store paired with <code>all-MiniLM-L6-v2</code> for zero-hallucination statutory citations.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span><strong>Contract Sanitization:</strong> Parses PDF/DOCX agreements into structured summaries of liabilities, deadlines, and compliance exposures.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span><strong>Cost Guardrails & Streaming:</strong> Input classification filters out non-legal junk files, cutting inference overhead via Groq API.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">ChromaDB</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">Sentence-Transformers</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Groq API</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">PyPDF</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">python-docx</span>
+            </div>
+
+            <!-- Prominent Bottom Button -->
+            <div class="pt-2">
+              <a href="https://github.com/AdarshM-Official" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-xs font-mono font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md hover:-translate-y-0.5">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Inspect RAG Pipeline on GitHub</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= CARD 3: MediReport AI ================= -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="healthcare ai web">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs font-bold text-brand-600 dark:text-brand-400">#03 // CLINICAL DOCUMENT AI</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/30">Gemini Vision</span>
                 </div>
                 <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
                   MediReport AI
                 </h4>
                 <p class="text-xs font-mono text-neutral-500">Autonomous Clinical Records Parser & Health Simulator</p>
               </div>
-              <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
-                <i data-lucide="github" class="w-4 h-4"></i>
-              </a>
+
+              <!-- Prominent Action Button -->
+              <div class="flex items-center gap-2 shrink-0">
+                <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-bold text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
 
-            <!-- Structured Narrative & Engineering Focus -->
             <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Transforms chaotic clinical records and scanned lab sheets into verified, structured patient intelligence without requiring manual transcription.
+              Clinical diagnostic ingestion app transforming unstructured lab PDFs and medical imagery into validated JSON schemas without manual data entry.
             </p>
 
-            <div class="space-y-2.5 pt-1">
+            <div class="space-y-2.5">
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Intelligent Ingestion:</strong> Connects Google Gemini API & LangChain pipelines with OpenCV image processing to parse varied clinical lab reports (PDF/images) into validated JSON schemas.</span>
+                <span><strong>Multimodal Ingestion:</strong> Google Gemini API & LangChain pipelines parse varied scanned lab sheets with OpenCV image conditioning.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Longitudinal Patient Portal:</strong> Provides an interactive timeline displaying vital trends alongside a dynamic, client-side body composition simulator built in Vanilla JS.</span>
+                <span><strong>Longitudinal Patient Portal:</strong> Interactive vital tracking timeline and real-time client-side BMI/composition simulator.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Automated Clinical Briefs:</strong> Generates tamper-resistant, print-ready PDF analytical reports on demand with ReportLab server-side rendering.</span>
+                <span><strong>Server-Side Reporting:</strong> Renders automated, tamper-resistant PDF summaries using ReportLab.</span>
               </div>
             </div>
+
           </div>
 
-          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
             <div class="flex flex-wrap gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">Gemini API</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">LangChain</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">Gemini API</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">LangChain</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">OpenCV</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">ReportLab</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">TailwindCSS</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
             </div>
-            
-            <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-              <span>Inspect Source on GitHub</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-            </a>
+
+            <!-- Prominent Bottom Button -->
+            <div class="pt-2">
+              <a href="https://github.com/AdarshM-Official/medireport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-xs font-mono font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md hover:-translate-y-0.5">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Inspect MediReport on GitHub</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Project 2: BookingCloud -->
-        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="freelance web ai">
-          <div class="space-y-5">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
+        <!-- ================= CARD 4: BookingCloud ================= -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-sm hover:border-cyan-500/70 dark:hover:border-cyan-500/70 group" data-category="freelance web ai">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
                 <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyanAccent-600 dark:text-cyanAccent-400 font-semibold">
-                    <i data-lucide="mic" class="w-3.5 h-3.5"></i> Multi-Tenant SaaS & Voice AI
-                  </span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Freelance SaaS</span>
+                  <span class="font-mono text-xs font-bold text-cyanAccent-600 dark:text-cyanAccent-400">#04 // MULTI-TENANT ARCHITECTURE</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-500/10 text-cyanAccent-600 dark:text-cyanAccent-400 border border-cyan-500/30">Freelance SaaS</span>
                 </div>
-                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-cyanAccent-600 dark:group-hover:text-cyanAccent-400 transition-colors">
                   BookingCloud
                 </h4>
-                <p class="text-xs font-mono text-neutral-500">Autonomous Subdomain Booking Architecture with LLM Concierge</p>
+                <p class="text-xs font-mono text-neutral-500">Autonomous Subdomain Booking Platform with LLM Voice Concierge</p>
               </div>
-              <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
-                <i data-lucide="github" class="w-4 h-4"></i>
-              </a>
+
+              <!-- Prominent Action Button -->
+              <div class="flex items-center gap-2 shrink-0">
+                <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-bold text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
 
-            <!-- Structured Narrative & Engineering Focus -->
             <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Provides service enterprises with an instant, private subdomain-isolated scheduling portal equipped with intelligent conversational voice booking.
+              Provides service enterprises with dedicated subdomain-isolated booking websites, staff roster governance, and automated conversational voice scheduling.
             </p>
 
-            <div class="space-y-2.5 pt-1">
+            <div class="space-y-2.5">
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
-                <span><strong>Multi-Tenant Architecture:</strong> Provisions dynamic, brandable subdomains for independent vendors with strict tenant-level database isolation and customizable service rosters.</span>
+                <span><strong>Multi-Tenant Isolation:</strong> Provisions dynamic subdomains for vendors with strict database isolation and customizable service menus.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
-                <span><strong>Conversational Voice Assistant:</strong> Leverages high-speed Groq LLM inference to handle natural-language appointment queries and voice-guided scheduling.</span>
+                <span><strong>Voice Assistant Integration:</strong> Integrated Groq LLM inference to handle natural-language appointment queries and voice bookings.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
-                <span><strong>Business Operations Center:</strong> Empowers business owners with staff shift management, category-driven service discovery, and shareable public links.</span>
+                <span><strong>Vendor Control Hub:</strong> Dedicated dashboards for shift management, category recommendations, and shareable booking URLs.</span>
               </div>
             </div>
+
           </div>
 
-          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
             <div class="flex flex-wrap gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-semibold">Groq LLM</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Voice AI</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">Groq LLM</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Voice Assistant</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Multi-Tenancy</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Tailwind CSS</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
             </div>
-            
-            <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-              <span>Inspect Source on GitHub</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-            </a>
-          </div>
-        </div>
 
-        <!-- Project 3: Multi-College Personalised Management Platform -->
-        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="freelance web ai">
-          <div class="space-y-5">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-semibold">
-                    <i data-lucide="bot" class="w-3.5 h-3.5"></i> Higher-Ed Cloud Operations
-                  </span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">Client Platform</span>
-                </div>
-                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-                  Multi-College Personalised Management
-                </h4>
-                <p class="text-xs font-mono text-neutral-500">Distributed Role Governance & Algorithmic Timetabling</p>
-              </div>
-              <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
+            <!-- Prominent Bottom Button -->
+            <div class="pt-2">
+              <a href="https://github.com/AdarshM-Official/bookingcloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-xs font-mono font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md hover:-translate-y-0.5">
                 <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Inspect BookingCloud on GitHub</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </a>
             </div>
-
-            <!-- Structured Narrative & Engineering Focus -->
-            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Consolidates academic logistics across multi-institution campuses through segregated permission levels, automated scheduling solvers, and integrated support chatbots.
-            </p>
-
-            <div class="space-y-2.5 pt-1">
-              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Role-Based Access Control:</strong> Enforces granular security boundaries for faculty, students, and campus administrators across attendance registries and academic records.</span>
-              </div>
-              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Automated Timetable Generation:</strong> Solves faculty-classroom scheduling constraints automatically to avoid timetable clashes across departments.</span>
-              </div>
-              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0 mt-0.5"></i>
-                <span><strong>Rigorous QA Verification:</strong> Documented and ran comprehensive test cases and validation suites to confirm system stability before deployment.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-semibold">AI Assistant</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Timetable Solver</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">RBAC</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Tailwind</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
-            </div>
-            
-            <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-              <span>Inspect Source on GitHub</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-            </a>
           </div>
         </div>
 
-        <!-- Project 4: LearnLoop -->
-        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group" data-category="ai web">
-          <div class="space-y-5">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
+        <!-- ================= CARD 5: LearnLoop (High-Visibility Live Demo & GitHub) ================= -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-emerald-500/40 dark:border-emerald-500/40 bg-gradient-to-br from-white via-white/95 to-emerald-50/20 dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-emerald-950/20 backdrop-blur-md shadow-md hover:shadow-xl hover:border-emerald-500 transition-all group" data-category="ai web">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
                 <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyanAccent-600 dark:text-cyanAccent-400 font-semibold">
-                    <i data-lucide="compass" class="w-3.5 h-3.5"></i> Predictive Modeling & Career AI
+                  <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">#05 // CAREER AI & PREDICTION</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500 text-white shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> Live Web App
                   </span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700">Applied ML</span>
                 </div>
-                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-                  LearnLoop
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  LearnLoop – AI Career Compass
                 </h4>
                 <p class="text-xs font-mono text-neutral-500">Machine Learning Skill-Mapping & Guidance System</p>
               </div>
-              <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm" title="View Source on GitHub" aria-label="GitHub Repository">
-                <i data-lucide="github" class="w-4 h-4"></i>
-              </a>
+
+              <!-- High-Visibility Dual Action Buttons in Header -->
+              <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <a href="https://learnloop-1ywm.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                  </span>
+                  <span>Live App</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+
+                <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs font-mono font-bold hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-neutral-900 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>Code</span>
+                </a>
+              </div>
             </div>
 
-            <!-- Structured Narrative & Engineering Focus -->
             <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Synthesizes student assessment inputs to map tailored professional roadmaps using an embedded machine learning classification pipeline.
+              Synthesizes student traits and test inputs to map tailored professional roadmaps using an embedded machine learning classification pipeline.
             </p>
 
-            <div class="space-y-2.5 pt-1">
+            <div class="space-y-2.5">
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
                 <span><strong>ML Recommendation Pipeline:</strong> Trains predictive algorithms on user skill profiles to match candidates with aligned industry specializations.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
                 <span><strong>Dynamic Assessment Interface:</strong> Gathers real-time responses through interactive question sequences served via internal Django REST endpoints.</span>
               </div>
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyanAccent-500 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
                 <span><strong>Testing & Calibration:</strong> Maintained end-to-end integration and unit tests validating input data integrity and model output consistency.</span>
               </div>
             </div>
+
           </div>
 
-          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
             <div class="flex flex-wrap gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 font-semibold">Machine Learning</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">Machine Learning</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Internal REST APIs</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Bootstrap</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">SQLite</span>
             </div>
-            
-            <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
-              <span>Inspect Source on GitHub</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-            </a>
+
+            <!-- Prominent Eye-Catching Dual Button Bar at Bottom -->
+            <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a href="https://learnloop-1ywm.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all hover:-translate-y-0.5">
+                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                <span>Launch Live Application</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+
+              <a href="https://github.com/Nekha024/LearnLoop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-xs font-mono font-bold hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm hover:-translate-y-0.5">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Inspect GitHub Repo</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Project 5: Farmie (Spans full 2 cols on lg) -->
-        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md shadow-sm hover:border-brand-500/70 dark:hover:border-brand-500/70 group lg:col-span-2" data-category="freelance web">
-          <div class="space-y-5">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
+        <!-- ================= CARD 6: Multi-College Personalised Management ================= -->
+        <div class="project-card card-transition flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-sm hover:border-indigo-500/70 dark:hover:border-indigo-500/70 group" data-category="freelance web ai">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
                 <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
-                    <i data-lucide="sprout" class="w-3.5 h-3.5"></i> Enterprise Data & Agricultural Web Service
-                  </span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Client Project</span>
+                  <span class="font-mono text-xs font-bold text-indigo-600 dark:text-indigo-400">#06 // CLOUD EDUCATION OPERATIONS</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30">Client Platform</span>
                 </div>
-                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  Multi-College Personalised Management
+                </h4>
+                <p class="text-xs font-mono text-neutral-500">Distributed Role Governance & Algorithmic Timetabling Solver</p>
+              </div>
+
+              <!-- Action Button -->
+              <div class="flex items-center gap-2 shrink-0">
+                <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-bold text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-neutral-950 transition-all shadow-sm">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Consolidates academic logistics across multi-institution campuses through segregated permission levels, automated scheduling constraint solvers, and integrated support chatbots.
+            </p>
+
+            <div class="space-y-2.5">
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span><strong>Role-Based Access Control:</strong> Enforces granular security boundaries for faculty, students, and administrators across attendance registries.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span><strong>Automated Timetable Generation:</strong> Solves classroom and faculty scheduling constraints automatically to avoid timetable clashes.</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span><strong>Rigorous QA Verification:</strong> Documented and ran comprehensive test cases confirming system stability before deployment.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Python</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Django</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">AI Assistant</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Timetable Solver</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">RBAC</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Tailwind</span>
+            </div>
+
+            <!-- Prominent Bottom Button -->
+            <div class="pt-2">
+              <a href="https://github.com/AdarshM-Official/Multi-College-Personalised-Management-Platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-xs font-mono font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md hover:-translate-y-0.5">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Inspect Platform Source on GitHub</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= CARD 7: Farmie ================= -->
+        <div class="project-card card-transition lg:col-span-2 flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md shadow-sm hover:border-emerald-500/70 dark:hover:border-emerald-500/70 group" data-category="freelance web">
+          <div class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-5">
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">#07 // AGRICULTURAL RELATIONAL DATA INFRASTRUCTURE</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">Client Deployment</span>
+                </div>
+                <h4 class="text-2xl font-extrabold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                   Farmie — Farming Assistance Web Service
                 </h4>
                 <p class="text-xs font-mono text-neutral-500">Relational Agricultural Data Infrastructure & Resource Management</p>
               </div>
+
+              <!-- Info Badge -->
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800/70 text-xs font-mono text-neutral-600 dark:text-neutral-400">
+                  <i data-lucide="database" class="w-3.5 h-3.5 text-emerald-500"></i>
+                  <span>PostgreSQL Backend</span>
+                </span>
+              </div>
             </div>
 
-            <!-- Structured Narrative & Engineering Focus -->
             <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-4xl">
               Engineered a unified digital advisory platform connecting regional farming communities with crop lifecycle tracking and supply metrics supported by high-concurrency database queries.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="flex items-start gap-2.5 text-xs text-neutral-600 dark:text-neutral-400">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
                 <span><strong>Relational Data Architecture:</strong> Built on a normalized PostgreSQL schema ensuring ACID compliance across regional inventories, user logs, and farm reports.</span>
@@ -916,12 +1172,25 @@
                 <span><strong>Centralized Governance Suite:</strong> Built an intuitive operational dashboard allowing staff to track grower activity, update advisory notices, and audit system records.</span>
               </div>
             </div>
+
           </div>
 
-          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-5">
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
             <div class="flex flex-wrap gap-1.5">
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">PHP</span>
-              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-semibold">PostgreSQL</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">PostgreSQL</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">JavaScript</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">HTML5</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">CSS3</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Admin Panel</span>
+            </div>
+          </div>
+        </div>
+
+          <div class="pt-6 space-y-4 border-t border-neutral-200/60 dark:border-neutral-800/60 mt-6">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">PHP</span>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">PostgreSQL</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">JavaScript</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">HTML5</span>
               <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">CSS3</span>
